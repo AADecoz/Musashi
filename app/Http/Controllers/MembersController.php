@@ -13,7 +13,8 @@ class MembersController extends Controller
      */
     public function index()
     {
-        //
+        $member = Member::all();
+        return view('index', compact('member'));
     }
 
     /**
@@ -23,7 +24,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -34,7 +35,18 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeData=$request->validate([
+        'name' => 'required|max:100',
+        'firstname' => 'required|max:100',
+        'geslacht'=> 'required|max:100',
+        'dateofbirth'=> 'required|max:100',
+        'group'=> 'required|max:100',
+        'email'=> 'required|max:100',
+        'level'=> 'required|max:100',
+        ]);
+
+        $member = Member::create($storeData);
+        return redirect('/members')->with('ourMessage', 'Member has been created');
     }
 
     /**
@@ -56,7 +68,8 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Member::findorFail($id);
+        return  view('edit', compact('member'));
     }
 
     /**
@@ -68,7 +81,18 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateData = $request->validate([
+            'name' => 'required|max:100',
+            'firstname' => 'required|max:100',
+            'geslacht'=> 'required|max:100',
+            'dateofbirth'=> 'required|max:100',
+            'group'=> 'required|max:100',
+            'email'=> 'required|max:100',
+            'level'=> 'required|max:100',
+
+        ]);
+        $member = Member::create($updateData);
+        return redirect('/members')->with('ourMessage', 'Member has been updated');
     }
 
     /**
@@ -79,6 +103,8 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = Member::findOrfail($id);
+        $member->delete();
+        return redirect('/members')->with('ourMessage', 'Member has been DELETED');
     }
 }
