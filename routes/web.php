@@ -17,14 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home.index');
 
-Route::get('/contact', function () {
-    return 'Contacteer mij ;)';
-})->name('home.contact');
+Route::resource('/members', \App\Http\Controllers\MembersController::class);
 
-Route::get('/login', function (){
-    return "Login mij in schatje";
-})->name('home.login');
-
-Route::get('/profile/user/{name}', function ($name){
-    return "Oeh wat zie jij er mooi uit $name";
-})->name('home.profile');
+//Route::get('/login', function (){
+//    return "Login mij in schatje";
+//})->name('home.login');
+//
+//Route::get('/profile/user/{name}', function ($name){
+//    return "Oeh wat zie jij er mooi uit $name";
+//})->name('home.profile');
