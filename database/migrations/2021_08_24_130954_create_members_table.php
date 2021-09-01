@@ -14,14 +14,14 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id('member_id');
             $table->string('name');
             $table->string('firstname');
-            $table->enum('geslacht', ['male', 'female']);
-            $table->date('dateofbirth');
-            $table->enum('group', ['sensei', 'member', 'passive member']);
-            $table->string('email');
-            $table->enum('level' , ['6Dan', '5Dan', '4Dan', '3Dan', '2Dan', '1Dan', '1Kyu', '2Kyu', '3Kyu', '4Kyu', '5Kyu', '6Kyu']);
+//            $table->enum('geslacht', ['male', 'female']);
+//            $table->date('dateofbirth');
+//            $table->enum('group', ['sensei', 'member', 'passive member']);
+//            $table->string('email');
+//            $table->enum('level' , ['6Dan', '5Dan', '4Dan', '3Dan', '2Dan', '1Dan', '1Kyu', '2Kyu', '3Kyu', '4Kyu', '5Kyu', '6Kyu']);
             $table->timestamps();
         });
     }

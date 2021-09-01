@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
 
 class MembersController extends Controller
 {
@@ -38,11 +39,11 @@ class MembersController extends Controller
         $storeData=$request->validate([
         'name' => 'required|max:100',
         'firstname' => 'required|max:100',
-        'geslacht'=> 'required|max:100',
-        'dateofbirth'=> 'required|max:100',
-        'group'=> 'required|max:100',
-        'email'=> 'required|max:100',
-        'level'=> 'required|max:100',
+//        'geslacht'=> 'required|max:100',
+//        'dateofbirth'=> 'required|max:100',
+//        'group'=> 'required|max:100',
+//        'email'=> 'required|max:100',
+//        'level'=> 'required|max:100',
         ]);
 
         $member = Member::create($storeData);
@@ -84,11 +85,11 @@ class MembersController extends Controller
         $updateData = $request->validate([
             'name' => 'required|max:100',
             'firstname' => 'required|max:100',
-            'geslacht'=> 'required|max:100',
-            'dateofbirth'=> 'required|max:100',
-            'group'=> 'required|max:100',
-            'email'=> 'required|max:100',
-            'level'=> 'required|max:100',
+//            'gender',
+//            'dateofbirth'=> 'required|max:100',
+//            'group'=> 'required|max:100',
+//            'email',
+//            'level'=> 'required|max:100',
 
         ]);
         $member = Member::create($updateData);
