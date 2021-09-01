@@ -23,11 +23,11 @@
                     <a href=""></a>
                     <a href=""></a>
                 <div class="card-footer text-muted">
-                    <a href="{{ route('') }}"></a><button type="button" class="btn btn-primary">Edit</button>
-                    <form action="{{ route('members.destroy', $member->id) }}" method="post" style="display: inline-block">
+                    <a href="{{ route('members.edit', $members->id)}}"><button type="submit" class="btn btn-primary">Edit</button></a>
+                    <form action="{{ route('members.destroy', $members->id) }}" method="post" style="display: inline-block">
                         @csrf
                         @method('DELETE')
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
                 </div>

@@ -14,7 +14,7 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->id('member_id');
+            $table->id();
             $table->string('name');
             $table->string('firstname');
 //            $table->enum('geslacht', ['male', 'female']);
