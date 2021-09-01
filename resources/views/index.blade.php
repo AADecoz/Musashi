@@ -14,10 +14,10 @@
     @foreach($member as $members)
         <div class="col-md-4 mb-2">
             <div class="card">
-                <img src="..." class="card-img-top" alt="{{$members->name}}">
+                <img src="..." class="card-img-top" alt="{{$members->lastname}}">
                 <div class="card-body">
-                    <h5>{{$members->name}}</h5>
-                    <p class="card-text">{{$members->name}}, {{$members->firstname}} </p>
+                    <h5>{{$members->lastname}}</h5>
+                    <p class="card-text">{{$members->lastname}}, {{$members->firstname}} </p>
                 </div>
                 <div class="card-body">
                     <a href=""></a>

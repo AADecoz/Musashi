@@ -4,46 +4,46 @@
 @endsection
 @section('content')
 
-    <div class="container px-5 my-5">
+    <div class="container-fluid px-5 my-5">
         <form id="contactForm" method="post" action="{{ route('members.store') }}">
             @csrf
-            <div class="form-floating mb-3">
-                <input class="form-control" id="name" type="text" placeholder="Name" name="name" style="height: 10rem;" data-sb-validations="required"></input>
-                <label for="name">Name</label>
+            <div class="form-floating mb-2">
+                <input class="form-control" id="name" type="text" placeholder="Name" name="lastname" style="height: 10rem;" data-sb-validations="required"></input>
+                <label for="name">Achternaam</label>
                 <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-2">
                 <input class="form-control" id="firstName" type="text" placeholder="FirstName" name="firstname" style="height: 10rem;" data-sb-validations="required"></input>
-                <label for="firstName">FirstName</label>
+                <label for="firstName">Voornaam</label>
                 <div class="invalid-feedback" data-sb-feedback="firstName:required">FirstName is required.</div>
             </div>
-{{--            <div class="mb-3">--}}
-{{--                <label class="form-label d-block">Geslacht</label>--}}
-{{--                <div class="form-check form-check-inline">--}}
-{{--                    <input class="form-check-input" id="male" type="radio" geslacht="geslacht" name="geslacht" data-sb-validations="" />--}}
-{{--                    <label class="form-check-label" for="male">Male</label>--}}
-{{--                </div>--}}
-{{--                <div class="form-check form-check-inline">--}}
-{{--                    <input class="form-check-input" id="female" type="radio"  name="geslacht" data-sb-validations="" />--}}
-{{--                    <label class="form-check-label" for="female">Female</label>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="form-floating mb-3">--}}
-{{--                <input class="form-control" id="dateOfBirth" type="text" placeholder="Date of Birth" data-sb-validations="required" />--}}
-{{--                <label for="dateOfBirth">Date of Birth</label>--}}
-{{--                <div class="invalid-feedback" data-sb-feedback="dateOfBirth:required">Date of Birth is required.</div>--}}
-{{--            </div>--}}
-{{--            <div class="mb-3">--}}
-{{--                <label class="form-label d-block">Group</label>--}}
-{{--                <div class="form-check form-check-inline">--}}
-{{--                    <input class="form-check-input" id="teacher" type="radio" name="group" data-sb-validations="" />--}}
-{{--                    <label class="form-check-label" for="teacher">Teacher</label>--}}
-{{--                </div>--}}
-{{--                <div class="form-check form-check-inline">--}}
-{{--                    <input class="form-check-input" id="member" type="radio" name="group" data-sb-validations="" />--}}
-{{--                    <label class="form-check-label" for="member">Member</label>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="mb-3">
+                <label class="form-label d-block">Geslacht</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="male" type="radio" name="gender" data-sb-validations="" />
+                    <label class="form-check-label" for="male">Man</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="female" type="radio"  name="gender" data-sb-validations="" />
+                    <label class="form-check-label" for="female">Vrouw</label>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="dateOfBirth" type="text" placeholder="Date of Birth" data-sb-validations="required" />
+                <label for="dateOfBirth">Geboorte Datum</label>
+                <div class="invalid-feedback" data-sb-feedback="dateOfBirth:required">Date of Birth is required.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label d-block">Group</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="teacher" type="radio" name="group" data-sb-validations="" />
+                    <label class="form-check-label" for="teacher">Teacher</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="member" type="radio" name="group" data-sb-validations="" />
+                    <label class="form-check-label" for="member">Member</label>
+                </div>
+            </div>
 {{--            <div class="form-floating mb-3">--}}
 {{--                <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" name="email" data-sb-validations="required,email" />--}}
 {{--                <label for="emailAddress">Email Address</label>--}}

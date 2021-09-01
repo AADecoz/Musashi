@@ -31,7 +31,7 @@
                     @csrf
                     @method('PATCH')
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" value="{{ $member->name }}"/>
+                    <input type="text" class="form-control" name="name" value="{{ $member->lastname }}"/>
                 </div>
                 <div class="form-group">
                     <label for="firstname">Email</label>

@@ -83,7 +83,7 @@ class MembersController extends Controller
     public function update(Request $request, $id)
     {
         $updateData = $request->validate([
-            'name' => 'required|max:100',
+            'lastname' => 'required|max:100',
             'firstname' => 'required|max:100',
             'gender',
             'dateofbirth',
