@@ -14,15 +14,25 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->id();
+            $table->id('member_id');
             $table->string('name');
             $table->string('firstname');
-//            $table->enum('geslacht', ['male', 'female']);
-//            $table->date('dateofbirth');
-//            $table->enum('group', ['sensei', 'member', 'passive member']);
-//            $table->string('email');
-//            $table->enum('level' , ['6Dan', '5Dan', '4Dan', '3Dan', '2Dan', '1Dan', '1Kyu', '2Kyu', '3Kyu', '4Kyu', '5Kyu', '6Kyu']);
+            $table->enum('gender', ['male', 'female']);
+            $table->dateTime('dateofbirth');
+            $table->foreignId('group')->constrained('grouptype', 'group_id');
+            $table->string('email')->unique();
+            $table->foreignId('level')->constrained('levels', 'level_id');
             $table->timestamps();
+        });
+
+        Schema::create('levels', function (Blueprint $table){
+            $table->id('level_id');
+            $table->string('level_name');
+        });
+
+        Schema::create('grouptype', function (Blueprint $table){
+            $table->id('group_id');
+            $table->string('group_name');
         });
     }
 

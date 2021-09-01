@@ -85,11 +85,11 @@ class MembersController extends Controller
         $updateData = $request->validate([
             'name' => 'required|max:100',
             'firstname' => 'required|max:100',
-//            'gender',
-//            'dateofbirth'=> 'required|max:100',
-//            'group'=> 'required|max:100',
-//            'email',
-//            'level'=> 'required|max:100',
+            'gender',
+            'dateofbirth',
+            'group',
+            'email',
+            'level',
 
         ]);
         $member = Member::create($updateData);

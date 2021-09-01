@@ -12,10 +12,10 @@ class Member extends Model
     protected $fillable = [
         'name',
         'firstname',
-//        'geslacht',
-//        'dateofbirth',
-//        'group',
-//        'email',
-//        'level'
+        'geslacht',
+        'dateofbirth',
+        'group',
+        'email',
+        'level'
     ];
 }

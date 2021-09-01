@@ -17,7 +17,7 @@
                 <img src="..." class="card-img-top" alt="{{$members->name}}">
                 <div class="card-body">
                     <h5>{{$members->name}}</h5>
-                    <p class="card-text">{{$members->name}} {{$members->firstname}} </p>
+                    <p class="card-text">{{$members->name}}, {{$members->firstname}} </p>
                 </div>
                 <div class="card-body">
                     <a href=""></a>
